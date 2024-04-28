@@ -16,21 +16,25 @@
     >   
         <div> <input type="file" name="uploaded_image" />
             <button type="submit">Upload</button>
+            {% if image_path %}
+    <img src="{{ image_path }}" alt="Uploaded Image" width="330">
+    {% endif %}
         </div>
         </form>
 
-        <form action="">
-        <select  name="Operation">
-            <option value="option1">Inversion</option>
-            <option value="option2">Smoothing</option>
-            <option value="option3">Edge Detection</option>
+        <form action="processImage" method="POST">
+        <select  name="selected_option" id="selected_option">
+            <option value="edge_detection">Edge Detection</option>
+            <option value="color_inversion">Color Inversion</option>
+            
             
         </select>
         <button type="submit">Process</button>
+        {% if processed_image_path %}
+    <img src="{{ processed_image_path }}" alt="Processed Image">
+{% endif %}
     </form>
-    {% if image_path %}
-    <img src="{{ image_path }}" alt="Uploaded Image" width="300">
-    {% endif %}
+    
         
 	</div>
 	

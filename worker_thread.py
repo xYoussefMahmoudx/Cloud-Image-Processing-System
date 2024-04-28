@@ -38,7 +38,7 @@ class WorkerThread(threading.Thread):
 
 
 
-def uploadImage (image,op):
+def processImage (image,op):
     task_queue = queue.Queue()
 
     # Instantiate WorkerThread

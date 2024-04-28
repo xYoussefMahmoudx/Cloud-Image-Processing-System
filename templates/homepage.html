@@ -15,8 +15,11 @@
         method="POST"
     >   
         <div> <input type="file" name="uploaded_image" />
-            <button>Upload</button>
+            <button type="submit">Upload</button>
         </div>
+        </form>
+
+        <form action="">
         <select  name="Operation">
             <option value="option1">Inversion</option>
             <option value="option2">Smoothing</option>
@@ -25,6 +28,9 @@
         </select>
         <button type="submit">Process</button>
     </form>
+    {% if image_path %}
+    <img src="{{ image_path }}" alt="Uploaded Image" width="300">
+    {% endif %}
         
 	</div>
 	

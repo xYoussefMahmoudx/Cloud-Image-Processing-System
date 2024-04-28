@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Input Image With Preview Image</title>
+</head>
+<body>
+	
+	<div class="container">
+        <form
+        action="addImage"
+        enctype="multipart/form-data"
+        method="POST"
+    >   
+        <div> <input type="file" name="uploaded_image" />
+            <button>Upload</button>
+        </div>
+        <select  name="Operation">
+            <option value="option1">Inversion</option>
+            <option value="option2">Smoothing</option>
+            <option value="option3">Edge Detection</option>
+            
+        </select>
+        <button type="submit">Process</button>
+    </form>
+        
+	</div>
+	
+	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+:root {
+	--light-blue: #B6DBF6;
+
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: var(--light-blue);
+}
+
+
+.container {
+	max-width: 400px;
+	width: 100%;
+	background: #fff;
+	padding: 30px;
+	border-radius: 30px;
+}
+
+form div{
+    border: black 1px solid;
+    border-radius: 5px;
+
+}
+button{
+    margin: 15px;
+    
+    border-radius: 10px;
+
+    padding: 5px;
+}
+input{
+    margin: 8px;
+
+    padding: 5px;
+    
+}
+
+
+
+    </style>
+</body>
+</html>

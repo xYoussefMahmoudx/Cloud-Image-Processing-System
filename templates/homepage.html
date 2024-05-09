@@ -30,9 +30,9 @@
             
         </select>
         <button type="submit">Process</button>
-        {% if processed_image_path %}
-    <img src="{{ processed_image_path }}" alt="Processed Image">
-{% endif %}
+        {% if encoded_image %}
+        <img src="data:image/jpeg;base64,{{ encoded_image }}" alt="Image" width="330">
+    {% endif %}
     </form>
     
         

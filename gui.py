@@ -82,6 +82,6 @@ def image_process():
 
 
 if __name__ == "__main__":
-    main_window.run(debug=True, host='192.168.80.128', port=5000)
+    main_window.run(debug=True, host='192.168.1.6', port=5000)
 
 

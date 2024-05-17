@@ -32,6 +32,12 @@ class WorkerThread(threading.Thread):
             result = cv2.Canny(image, 100, 200)
         elif operation == 'color_inversion':
             result = cv2.bitwise_not(image)  # Add more operations as needed...
+        elif operation == 'Smoothing':
+            result = cv2.GaussianBlur(image, (5, 5), 0)
+        elif operation == 'Sharpening':
+            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+            result = cv2.GaussianBlur(gray, (5, 5), 0)
+        
         
         return result
 

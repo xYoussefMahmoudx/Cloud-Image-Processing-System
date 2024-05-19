@@ -23,21 +23,15 @@ class WorkerThread(threading.Thread):
             result = self.process_image(image, operation)
             self.comm.send(result, dest=0)
 
-    def process_image(self, image, operation):
+    def process_image(self, img, operation):
         # Load the image
-        # img = cv2.imread(image, cv2.IMREAD_COLOR )
+        #img = cv2.imread(image, cv2.IMREAD_COLOR)
 
         # Perform the specified operation
         if operation == 'edge_detection':
-            result = cv2.Canny(image, 100, 200)
+            result = cv2.Canny(img, 100, 200)
         elif operation == 'color_inversion':
-            result = cv2.bitwise_not(image)  # Add more operations as needed...
-        elif operation == 'Smoothing':
-            result = cv2.GaussianBlur(image, (5, 5), 0)
-        elif operation == 'Sharpening':
-            gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            result = cv2.GaussianBlur(gray, (5, 5), 0)
-        
+            result = cv2.bitwise_not(img)  # Add more operations as needed...
         
         return result
 

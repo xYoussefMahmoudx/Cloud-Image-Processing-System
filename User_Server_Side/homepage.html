@@ -16,9 +16,14 @@
     >   
         <div> <input type="file" name="uploaded_image" />
             <button type="submit">Upload</button>
-            {% if image_path %}
-    <img src="{{ image_path }}" alt="Uploaded Image" width="330">
-    {% endif %}
+            {% if image_paths %}
+            <div style="display: flex; flex-wrap: wrap;">
+                
+                {% for x in image_paths %}
+                <img src="{{ x }}" alt="Uploaded Image" style="width: 220px; margin: 5px;">
+                {% endfor %}
+            </div>
+            {% endif %}
         </div>
         </form>
 
@@ -32,11 +37,20 @@
             
         </select>
         <button type="submit">Process</button>
-        {% if encoded_image %}
-        <img src="data:image/jpeg;base64,{{ encoded_image }}" alt="Image" width="330">
-    {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+        {% if processed_image_paths %}
+        {% for processed_image_path in processed_image_paths %}
+          <img src="{{ processed_image_path }}" alt="Processed Image" style="width: 220px; margin: 5px;">
+        {% endfor %}
+      {% endif %}
     </form>
-    
+    <form action="delete" method="post">
+        <button>Delete</button>
+    </form>
         
 	</div>
 	

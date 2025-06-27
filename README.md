@@ -35,3 +35,5 @@ This system allows users to upload images through a web-based graphical user int
 - Microsoft Azure account.
 - SSH keys for VM access.
 - Python and required libraries
+ ## [Report](https://drive.google.com/file/d/1SQbLaUtPxo1kSRA5dUp3MmumH69D_QIF/view?usp=sharing)
+ ## [Video](https://drive.google.com/file/d/1oo0HFmXl2moJbayZ8VlJPpC01bpS-nnc/view?usp=sharing)
